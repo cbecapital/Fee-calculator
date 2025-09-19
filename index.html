@@ -15,10 +15,25 @@
 <body> 
  
 
-
   <div class="container"> 
+    <h1></h1>
     <h1>Welcome to CBE Capital Transaction Calculator</h1>
+<div class="ticker">
+  <div class="ticker-label">Closing Prices:</div>
+  <div class="ticker-content">
+    <span>WGBX: 1200</span>
+    <span>GDAB: 1057</span>
+    <span>TBL182D: 4700</span>
+    <span>IBMM: 14.2103</span>
 
+
+    <!-- duplicate for smooth infinite loop -->
+     <span>WGBX: 1200</span>
+    <span>GDAB: 1057</span>
+    <span>TBL182D: 4700</span>
+    <span>IBMM: 14.2103</span>
+  </div>
+</div>
 <button class="btn" onclick="location.href='equity.html'">Equity Main & Growth Market</button>
     <button class="btn" onclick="location.href='otc.html'">OTC / Unlisted Market</button>
     <button class="btn" onclick="location.href='treasury.html'">GoE Treasury Bills</button>
