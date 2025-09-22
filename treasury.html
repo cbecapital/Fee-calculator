@@ -184,16 +184,27 @@ generateCalendar(currentDate);
   </div>
 
 
+<script>
+function formatNumberInput(input) {
+  let value = input.value.replace(/,/g, ""); // remove old commas
+  if (!isNaN(value) && value !== "") {
+    // format with commas, but keep decimals
+    let parts = value.split(".");
+    parts[0] = Number(parts[0]).toLocaleString("en-US");
+    input.value = parts.join(".");
+  }
+}
+</script>
 
   <!-- BUY SECTION -->
   <div id="buySection" style="display:none; margin-top:20px;">
     <h2>Buy Transaction</h2>
     <label for="buyQuantity">Enter Quantity of Treasury (number of securities):</label>
-    <input type="text" id="buyQuantity" placeholder="e.g. 100">
-
+<input type="text" id="buyQuantity" placeholder="e.g. 100" 
+       oninput="formatNumberInput(this)"> 
     <label for="buyMarketPrice"> Price (per security):</label>
-    <input type="text" id="buyMarketPrice" placeholder="e.g. 120.50">
-
+<input type="text" id="buyMarketPrice" placeholder="e.g. 120.50" 
+       oninput="formatNumberInput(this)">
     <button onclick="calculateFee('buy')">Calculate Buy</button>
     <div id="buyResult"></div>
   </div>
@@ -202,11 +213,12 @@ generateCalendar(currentDate);
   <div id="sellSection" style="display:none; margin-top:20px;">
     <h2>Sell Transaction</h2>
     <label for="sellQuantity">Enter Quantity (number of securities):</label>
-    <input type="text" id="sellQuantity" placeholder="e.g. 100">
+<input type="text" id="sellQuantity" placeholder="e.g. 100" 
+       oninput="formatNumberInput(this)">
 
     <label for="sellMarketPrice">Enter Market / Limit Price (per security):</label>
-    <input type="text" id="sellMarketPrice" placeholder="e.g. 120.50">
-
+<input type="text" id="sellMarketPrice" placeholder="e.g. 120.50" 
+       oninput="formatNumberInput(this)">
     <button onclick="calculateFee('sell')">Calculate Sell</button>
     <div id="sellResult"></div>
   </div>
