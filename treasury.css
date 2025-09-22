@@ -363,6 +363,9 @@ button:hover {
   width: auto;
   height: auto;
 }
+.home-btn {
+  z-index: 3000;
+}
 
 
 .home-btn:hover {
@@ -404,15 +407,15 @@ button:hover {
 
 
 
-/* responsive */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .calendar {
-    grid-template-columns: repeat(2, 1fr); /* fewer columns on tiny screens */
+    grid-template-columns: repeat(7, minmax(35px, 1fr));
+    font-size: 12px;
+    gap: 4px;
   }
 
-  .button-row {
-    flex-direction: column;
-    gap: 10px;
+  .day, .day-name {
+    padding: 6px;
   }
 
   .container {
@@ -423,4 +426,35 @@ button:hover {
   .ticker {
     font-size: 12px;
   }
+
+  .button-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .button-row .btn {
+    width: 100%;
+  }
 }
+
+@media (max-width: 480px) {
+  .calendar {
+    grid-template-columns: repeat(7, minmax(25px, 1fr));
+    font-size: 10px;
+    gap: 3px;
+  }
+
+  .day, .day-name {
+    padding: 4px;
+  }
+
+  .calendar-header h1 {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+}
+
